@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+
+@theme {
+  /* base colors */
+  --color-primary-blue: hsl(218, 73%, 50%);
+  --color-primary-blue-hover: hsl(218, 73%, 44%);
+  --color-slate-blue: hsl(221, 81%, 48%);
+  --color-slate-blue-hover: hsl(221, 81%, 42%);
+  --color-ice-blue: hsl(230, 50%, 98%);
+  --color-dark-grey: hsl(0, 0%, 25%);
+
+  /* gradients */
+  --color-gradient-soft-blue: linear-gradient(
+    to bottom,
+    hsl(224, 48%, 95%),
+    hsl(221, 62%, 95%)
+  );
+  --color-gradient-primary-blue: linear-gradient(
+    to bottom,
+    hsl(126, 74%, 55%),
+    hsl(218, 70%, 49%)
+  );
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--color-gradient-soft-blue)
+}
+
+

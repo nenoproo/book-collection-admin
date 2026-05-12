@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Admin Dashboard | Book Collection</title>
+  </head>
+  <body class="px-8 py-10">
+    <header id="header" class="mb-13">
+      <h1 class="mb-4 font-semibold text-[2.25rem] text-dark-grey">
+        Book Database Manager
+      </h1>
+      <div class="flex gap-2">
+        <button
+          id="add-book-btn"
+          class="bg-primary-blue hover:bg-primary-blue-hover px-5 py-3 rounded-sm font-semibold text-white cursor-pointer"
+        >
+          Add Book
+        </button>
+        <button
+          id="logout-btn"
+          class="bg-white px-5 py-3 border border-gray-300 hover:border-gray-500 rounded-sm font-semibold text-dark-grey cursor-pointer"
+        >
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <!-- Add a book form div -->
+    <div id="add-book-form" class="hidden">
+      <form class="mx-auto w-full max-w-2xl">
+        <h1 class="mb-4 font-semibold text-[2.25rem] text-dark-grey">
+          Add Book
+        </h1>
+        <div class="flex flex-col mb-4">
+          <label for="title" class="mb-1">Title</label>
+          <input
+            type="text"
+            id="title"
+            class="bg-white mb-3 p-2 border-2 border-gray-200 focus:border-primary-blue rounded-md outline-none w-full transition-colors"
+          />
+
+          <label for="author" class="mb-1">Author</label>
+          <input
+            type="text"
+            id="author"
+            class="bg-white mb-3 p-2 border-2 border-gray-200 focus:border-primary-blue rounded-md outline-none w-full transition-colors"
+          />
+
+          <label for="genre" class="mb-1">Genre</label>
+          <select
+            id="genre"
+            class="bg-white mb-3 p-2 border-2 border-gray-200 focus:border-primary-blue rounded-md outline-none w-full transition-colors"
+          >
+            <option value="">Select genre</option>
+            <option value="">Non-fiction</option>
+            <option value="">Science</option>
+            <option value="">Educational</option>
+            <option value="">Self-help</option>
+            <option value="">Biography</option>
+            <option value="">Comics / Graphic Novels</option>
+            <option value="">Children's Literature</option>
+            <option value="">Fiction</option>
+          </select>
+
+          <label for="description" class="mb-1">Description</label>
+          <textarea
+            id="description"
+            rows="4"
+            class="bg-white mb-3 p-2 border-2 border-gray-200 focus:border-primary-blue rounded-md outline-none w-full transition-colors resize-none"
+          ></textarea>
+
+          <label for="year" class="mb-1">Year</label>
+          <input
+            type="number"
+            id="year"
+            class="bg-white mb-3 p-2 border-2 border-gray-200 focus:border-primary-blue rounded-md outline-none w-32 transition-colors"
+          />
+
+          <label for="pages" class="mb-1">Pages</label>
+          <input
+            type="number"
+            id="pages"
+            class="bg-white mb-3 p-2 border-2 border-gray-200 focus:border-primary-blue rounded-md outline-none w-32 transition-colors"
+          />
+
+          <label for="language" class="mb-1">Language</label>
+          <input
+            type="text"
+            id="language"
+            class="bg-white mb-3 p-2 border-2 border-gray-200 focus:border-primary-blue rounded-md outline-none w-32 transition-colors"
+          />
+
+          <label for="publisher" class="mb-1">Publisher</label>
+          <input
+            type="text"
+            id="publisher"
+            class="bg-white mb-3 p-2 border-2 border-gray-200 focus:border-primary-blue rounded-md outline-none w-full transition-colors"
+          />
+
+          <label for="cover" class="mb-1">Cover (image upload)</label>
+          <input
+            type="file"
+            id="cover"
+            class="bg-white mb-3 p-2 border-2 border-gray-200 rounded-md outline-none w-full"
+          />
+        </div>
+
+        <div class="flex gap-2">
+          <button
+            class="bg-primary-blue hover:bg-primary-blue-hover px-5 py-3 rounded-sm font-semibold text-white cursor-pointer"
+          >
+            Add
+          </button>
+          <button
+            id="cancel-btn"
+            class="bg-white px-5 py-3 border border-gray-300 hover:border-gray-500 rounded-sm font-semibold text-dark-grey cursor-pointer"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- book list view div -->
+    <table
+      id="table"
+      class="border border-gray-200 rounded-md w-full overflow-hidden"
+    >
+      <thead class="w-full table-fixed">
+        <tr class="border-gray-200 border-b text-left">
+          <th class="px-4 py-3 w-16">No.</th>
+          <th class="px-4 py-3">Title</th>
+          <th class="px-4 py-3">Author</th>
+          <th class="px-4 py-3 w-24px-4">Genre</th>
+          <th class="px-4 py-3 w-24">Year</th>
+          <th class="px-4 py-3 w-24">Pages</th>
+          <th class="px-4 py-3">Language</th>
+          <th class="px-4 py-3">Publisher</th>
+          <th class="px-4 py-3">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody id="books-table-body" class="text-[15px]">
+        <!-- секој <tr> претставува една книга (еден документ од MongoDB) а секој <td> е едно поле од таа книга -->
+      </tbody>
+    </table>
+  </body>
+  <script type="module" src="/src/admin.js"></script>
+</html>

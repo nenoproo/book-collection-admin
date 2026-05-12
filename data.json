@@ -1,0 +1,101 @@
+[{
+        "title": "The Silent Horizon",
+        "author": "Elias Thorn",
+        "genre": "fiction",
+        "description": "A journey across abandoned planets searching for lost civilizations.",
+        "pages": 166,
+        "language": "english",
+        "year": 2006,
+        "publisher": "Silver Oak Press"
+    },
+    {
+        "title": "Whispers of Winter",
+        "author": "Clara Voss",
+        "genre": "children's literature",
+        "description": "A kingdom trapped in endless winter and the girl destined to save it.",
+        "pages": 365,
+        "language": "english",
+        "year": 2019,
+        "publisher": "Moonlight House"
+    },
+    {
+        "title": "The Last Canvas",
+        "author": "Daniel Mercer",
+        "genre": "fiction",
+        "description": "A mathematician uncovers a deadly hidden code.",
+        "pages": 238,
+        "language": "french",
+        "year": 1889,
+        "publisher": "North Gate Publishing"
+    },
+    {
+        "title": "Echoes of the Deep",
+        "author": "Lina Crest",
+        "genre": "fiction",
+        "description": "Explorers discover secrets hidden in the ocean floor.",
+        "pages": 109,
+        "language": "english",
+        "year": 2018,
+        "publisher": "Oceanline Press"
+    },
+    {
+        "title": "Shadows in Glass",
+        "author": "Victor Petkovski",
+        "genre": "fiction",
+        "description": "Strange reflections reveal crimes from the past.",
+        "pages": 310,
+        "language": "macedonian",
+        "year": 1999,
+        "publisher": "Ars Lamina"
+    },
+    {
+        "title": "Crimson Harvest",
+        "author": "Amelia Hart",
+        "genre": "fiction",
+        "description": "A remote village hides a terrifying yearly ritual.",
+        "pages": 287,
+        "language": "english",
+        "year": 2025,
+        "publisher": "Raven Ink Publishing"
+    },
+    {
+        "title": "The Clockmaker’s Secret",
+        "author": "Julian Frost",
+        "genre": "self-help",
+        "description": "A clockmaker discovers a conspiracy in Victorian London.",
+        "pages": 516,
+        "language": "english",
+        "year": 1956,
+        "publisher": "Golden Tower Press"
+    },
+    {
+        "title": "Digital Souls",
+        "author": "Nora Quinn",
+        "genre": "science",
+        "description": "A scientific exploration of neural interfaces and the possibility of encoding and simulating human consciousness within advanced AI systems.",
+        "pages": 334,
+        "language": "english",
+        "year": 1995,
+        "publisher": "Neon Path Books"
+    },
+    {
+        "title": "The Focus Reset",
+        "author": "Maya Collins",
+        "genre": "self-help",
+        "description": "A guide to improving focus, habits, and productivity through mental training and routine building.",
+        "pages": 260,
+        "language": "english",
+        "year": 2022,
+        "publisher": "ClearMind Press"
+    },
+    {
+        "title": "The Silent Man",
+        "author": "Nick Fergusson",
+        "genre": "biography",
+        "description": "A biography exploring the hidden life and achievements of a man who influenced political and scientific circles while remaining out of the public eye.",
+        "pages": 401,
+        "language": "english",
+        "year": 2011,
+        "publisher": "Northbridge"
+    }
+]
