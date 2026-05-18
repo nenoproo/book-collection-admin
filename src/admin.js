@@ -16,6 +16,7 @@ const yearInput = document.getElementById('year');
 const languageInput = document.getElementById('language');
 const publisherInput = document.getElementById('publisher');
 const tbody = document.getElementById('books-table-body');
+const loading = document.getElementById('loading');
 
 // функција за прикажување / криење на формата за додавање книга
 const toggleAddBookForm = () => {
@@ -45,7 +46,10 @@ logoutBtn.addEventListener('click', () => {
 // function to fetch data
 const fetchData = async () => {
   try {
-    const res = await axios.get('http://localhost:3000/books');
+    loading.style.display = 'block';
+
+    // const res = await axios.get('http://localhost:3000/books');
+    const res = await axios.get('https://book-collection-admin.onrender.com/books');
     const books = res.data;
     console.log(books);
 
@@ -53,6 +57,8 @@ const fetchData = async () => {
     renderBooks(books);
   } catch (error) {
     console.error('Error fetching data!', error);
+  } finally {
+    loading.style.display = 'none';
   }
 };
 

@@ -6,20 +6,23 @@ import { MongoClient, ObjectId } from 'mongodb';
 // создава нов мини експрес рутер
 const router = express.Router();
 
-// url за http:// адреси а uri за mongodb:// и слично
-// oвој url е за локален MongoDB
+// url за http:// адреси а uri за mongodb://, process.env.MONGO_URI и слично
+// oвој url е за локален MongoDB. Податоците одат во мојот компјутер а не во Атлас
 // const uri = 'mongodb://127.0.0.1:27017';
 
 // овој uri е за конекција до Atlas
-const uri = 'mongodb+srv://nenokings_db_user:Q0rqOPDoxxh4wYsP@cluster0.4nyefgj.mongodb.net/library?retryWrites=true&w=majority&appName=Cluster0';
+const uri = process.env.MONGO_URI;
 // креираме MongoDB client преку кој backend-от ќе комуницира со базата
+console.log('MONGO_URI:', process.env.MONGO_URI);
 const client = new MongoClient(uri);
+await client.connect(); // ← ЕДНАШ ТУКА (над routes). Можеме await надвор од функција затоа што користиме ES Modules
 
+// ROUTES:
 // GET request за /books route (крајниот endpoint е /books)
 router.get('/', async (req, res) => {
   try {
     // конекција со MongoDB. client.connect() враќа Promise (асинхрона операција) а await го “resolve-ира” Promise-от и функцијата не продолжува понатака се додека не се отствари конекцијата
-    await client.connect();
+    // await client.connect(); - avoid reconnecting per request
 
     // database: library
     const db = client.db('library');
@@ -45,7 +48,6 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
 
   try {
-    await client.connect();
 
     const { title, author, genre, pages, language, year, publisher } = req.body;
     // креира нормален JavaScript објект само што користи шортхенд запис (само keys)
